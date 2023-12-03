@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  lambda-service-template:
+    environment:
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_SESSION_TOKEN==${AWS_SESSION_TOKEN}
+    build:
+      dockerfile: docker/Dockerfile
+      context: .
+    ports:
+      - "9000:8080"
+      # - .env.prod:/var/task/.env.prod
+      # - ${HOME}/.aws:/root/.aws/:ro

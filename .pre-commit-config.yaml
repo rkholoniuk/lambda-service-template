@@ -1,0 +1,22 @@
+default_language_version:
+  python: python3.11.8
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0  # Use the ref you want to point at
+    hooks:
+    -   id: trailing-whitespace
+    -   id: detect-aws-credentials
+    -   id: detect-private-key
+-   repo: https://github.com/psf/black
+    rev: 22.10.0
+    hooks:
+    -   id: black
+        language_version: python3.9
+-   repo: https://github.com/PyCQA/pylint
+    rev: v3.1.0  # Replace with the version you want to use
+    hooks:
+    -   id: pylint
+        entry: pylint
+        language: system
+        types: [python]  # Ensures it only runs on Python files
+        args: ['--rcfile=.pylintrc', 'modules']  # Assumes you have a .pylintrc to configure pylint

@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lambda-service-template"
+authors = [
+    { name = "lambda service", email = "rkholoniuk@gmail.com" }
+]
+description = "package description"
+version = "0.0.1"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "pylint",
+    "boto3",
+    "requests"
+]
